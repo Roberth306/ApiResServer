@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 21-feb-2020 17:01:37 by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
+    <class catalog="cartas_db" dynamic-insert="false" dynamic-update="false" mutable="true" name="clasesH.Carman" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="carman">
+        <composite-id class="clasesH.CarmanId" mapped="false" name="id" unsaved-value="undefined">
+            <key-property name="idMano" type="int">
+                <column name="Id_Mano"/>
+            </key-property>
+            <key-property name="idCarta" type="int">
+                <column name="Id_Carta"/>
+            </key-property>
+        </composite-id>
+        <many-to-one class="clasesH.Cartas" embed-xml="true" fetch="select" insert="false" name="cartas" not-found="exception" optimistic-lock="true" unique="false" update="false">
+            <column name="Id_Carta" not-null="true"/>
+        </many-to-one>
+        <many-to-one class="clasesH.Mano" embed-xml="true" fetch="select" insert="false" name="mano" not-found="exception" optimistic-lock="true" unique="false" update="false">
+            <column name="Id_Mano" not-null="true"/>
+        </many-to-one>
+        <property generated="never" lazy="false" name="usada" optimistic-lock="true" type="boolean" unique="false">
+            <column name="Usada" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
