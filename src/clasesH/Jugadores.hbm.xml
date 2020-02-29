@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generated 21-feb-2020 17:01:37 by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-feb-2020 21:18:04 by Hibernate Tools 5.4.7.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping auto-import="true" default-access="property" default-cascade="none" default-lazy="true">
     <class catalog="cartas_db" dynamic-insert="false" dynamic-update="false" mutable="true" name="clasesH.Jugadores" optimistic-lock="version" polymorphism="implicit" select-before-update="false" table="jugadores">
         <id name="usuario" type="string">

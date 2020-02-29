@@ -78,7 +78,7 @@ public class CrudCartas {
 
 		j1 = new Gson().fromJson(json, Jugadores.class);
 
-		//System.out.println(j1.getUsuario()+" "+j1.getPassword());
+		System.out.println(j1.getUsuario()+" "+j1.getPassword());
 
 
 		Query q = session.createQuery("from Jugadores where Usuario = :email and Password = :password");
@@ -86,14 +86,14 @@ public class CrudCartas {
 		q.setParameter("password", j1.getPassword());
 		ArrayList<Jugadores> jugador = (ArrayList<Jugadores>)q.getResultList();
 		if(!jugador.isEmpty()) {
-			//TODO llamar a comprobar sesion 
+			
 			Query q2 = session.createQuery("from Sesion where Email = :email");
 			q2.setParameter("email", j1.getUsuario());
 
 			ArrayList<Sesion> sesion = (ArrayList<Sesion>)q2.getResultList();
 
 			if(!sesion.isEmpty()) {
-				res = Response.ok(sesion.get(0).getIdSesion()).build();
+				res = Response.ok(new Gson().toJson(sesion.get(0).getIdSesion())).build();
 
 			}else {
 				String sesionUID = UUID.randomUUID().toString();
@@ -198,6 +198,7 @@ public class CrudCartas {
 	@PUT
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response cancelarPartida(String orden) { 
+		
 
 		Partida p1 = new Gson().fromJson(orden, Partida.class);
 

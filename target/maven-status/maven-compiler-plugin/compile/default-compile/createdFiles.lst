@@ -1,10 +1,13 @@
 clasesH\CarmanId.class
 clasesH\Partida.class
 hibernateUtil\HibernateUtil.class
+server\CrudCartas$Caracteristica.class
+clasesH\Jugadores.class
+clasesA\SupCarta.class
+clasesH\Carman.class
 clasesH\Mano.class
 clasesH\Cartas.class
-clasesH\Jugadores.class
 clasesH\Sesion.class
 server\CrudCartas.class
+clasesA\CartaJugada.class
 app\Application.class
-clasesH\Carman.class

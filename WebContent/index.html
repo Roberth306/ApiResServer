@@ -5,6 +5,49 @@
 <title>Inicio</title>
 </head>
 <body>
-<h1>Hola</h1>
+	<h1>API-REST END-POINTS</h1>
+	<img src="https://i0.wp.com/www.cmdearcos.es/wp-content/uploads/2015/01/microrest_small.jpg?fit=624%2C417&ssl=1" width="500" height="250" >
+
+	<ol>
+		<li>Pagina Principal:
+			<b>http://localhost:8080/Server_Cartas/index.html</b></li>
+
+		<li>Login Jugador(POST):
+			<b>http://localhost:8080/Server_Cartas/inicio/login</b>
+			<ol type="I">
+				<li>Parametros a pasar: {"usuario":"Valor","password":"Valor"}</li>
+			</ol>
+		</li>
+
+		<li>Crear Partida(POST:
+			<b>http://localhost:8080/Server_Cartas/inicio/partida)</b>
+			<ol type="I">
+				<li>Parametros a pasar: {"idSesion":"Valor"}</li>
+			</ol>
+		</li>
+
+		<li>Cancelar Partida(POST):
+			<b>http://localhost:8080/Server_Cartas/inicio/cancelarP</b>
+			<ol type="I">
+				<li>Parametros a pasar: {"idGame":"Valor"}</li>
+			</ol>
+		</li>
+
+		<li>Jugar Partidas(POST):
+			<b>http://localhost:8080/Server_Cartas/inicio/jugarP</b>
+			<ol type="I">
+				<li>Parametros a pasar: {"idSesion":"Valor","idGame":"Valor","idCarta":"Valor","caracteristica":"Valor"}</li>
+			</ol>
+		</li>
+	</ol>
+	
+	<h3>Ejemplos Funcionales(Probar con Postman)</h3>
+	<ol>
+	<li>Login: {"usuario":"a","password":"a"}</li>
+	<li>Crear Partida: {"idSesion":"b08a4ec2-b4f3-4713-bfd6-82f2162975f3"}</li>
+	<li>Cancelar Partida(Solo Funciona 1 vez por partida en curso): {"idGame":"11"} </li>
+	<li>Jugar Partida: {"idSesion":"b08a4ec2-b4f3-4713-bfd6-82f2162975f3","idGame":"11","idCarta":"13","caracteristica":"Motor"} </li>
+	</ol>
+	
 </body>
 </html>
